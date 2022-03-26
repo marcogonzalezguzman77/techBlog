@@ -31,6 +31,15 @@ DashboardCommentaries.init(
       }
     },
 
+    commentary_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'commentaries',
+        key: 'id',
+        unique: false
+      }
+    },
+   
 
   },
   {

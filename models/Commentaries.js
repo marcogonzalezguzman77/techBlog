@@ -5,6 +5,8 @@ class Commentaries extends Model {}
 
 Commentaries.init(
   {
+
+
     id: {
       type: DataTypes.INTEGER,
       allowNull: false,
@@ -27,6 +29,9 @@ Commentaries.init(
         key: 'id',
       },
     },
+
+
+
   },
   {
     sequelize,

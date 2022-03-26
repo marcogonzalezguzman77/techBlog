@@ -5,6 +5,8 @@ class Dashboard extends Model {}
 
 Dashboard.init(
   {
+
+    
     id: {
       type: DataTypes.INTEGER,
       allowNull: false,
@@ -30,6 +32,8 @@ Dashboard.init(
         key: 'id',
       },
     },
+
+
   },
   {
     sequelize,
