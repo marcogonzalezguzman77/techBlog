@@ -1,0 +1,14 @@
+<div class="text-center">
+  <h2>{{name}}</h2>  
+  <p>{{description}}</p>
+  <p>Created by {{user.name}} on {{format_date date_created}}</p>
+</div>
+{{#if commentaries_dashboard_detail}}
+  {{#each commentaries_dashboard_detail as |commentarie| }}
+    <p>
+    {{commentarie.commentary}}. Posted by  {{commentarie.user.name}} {{format_date commentarie.date_created}} 
+    </p>
+  {{/each}}
+{{else}}
+  <p>There is no commentaries</p>
+{{/if}}
