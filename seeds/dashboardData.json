@@ -1,0 +1,14 @@
+[
+  {
+    "name": "MVC Folders",
+    "description": "At least: models, controllers, views"   
+  },
+  {
+    "name": "Project Managment Phases",
+    "description": "Start, Planning, Execution, Management and Monitoring-Control, Conclusion"   
+  },
+  {
+    "name": "Complementary MVC Folders",
+    "description": "At least: db, config, seeds, public, utils"    
+  }
+]
