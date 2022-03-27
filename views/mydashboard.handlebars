@@ -1,0 +1,53 @@
+
+<div id="div_btnAddPost" style="border-bottom: solid black; margin-bottom:20px; padding-bottom:20px;">
+  <button id="btn_addPost" class="btn btn-primary" type="submit">Add New Post</button>
+</div>
+
+<div id="all_myposts">
+<h1>All my posts</h1>
+<!-- Loop over each object in the projects array -->
+{{#each dashboards as |dashboard| }}
+<div class="row mb-4 project">
+  <div class="col-md-5">
+    <h2>           
+      <a href="/dashboard/{{dashboard.id}}">{{dashboard.name}}</a>
+    </h2>
+    
+    <p>Created by {{dashboard.user.name}} on {{format_date dashboard.date_created}}</p>
+  </div>
+  <div class="col-md-7">
+    <p>
+      {{dashboard.description}}
+    </p>
+  </div>
+</div>
+{{/each}}
+</div>
+
+
+
+
+<div class="col-md-6" id="newPost_form" style="display:none">
+    <h3>Create a New Post:</h3>
+
+    <form class="form new-project-form">
+      <div class="form-group">
+        <label for="post-name">Post name:</label>
+        <input class="form-input" type="text" id="post-name" name="post-name" />
+      </div>      
+      <div class="form-group">
+        <label for="post-desc">Description:</label>
+        <textarea class="form-input" id="post-desc" name="post-desc"></textarea>
+      </div>
+      <div class="form-group">
+        <button id="btn_create" type="submit" class="btn btn-primary">Create</button>
+      </div>
+    </form>
+  </div>
+
+
+
+
+
+
+<script src="/js/post.js"></script>
