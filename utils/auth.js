@@ -3,7 +3,7 @@ const withAuth = (req, res, next) => {
   console.log('inside withAuth')
   if (!req.session.logged_in) {
     console.log('inside redirect');
-    res.redirect('login');
+    res.redirect('/login');
   } else {
     next();
   }

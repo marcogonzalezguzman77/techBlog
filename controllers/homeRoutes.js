@@ -103,7 +103,7 @@ router.get('/mydashboard/:id', async (req, res) => {
 
 //I USE THIS TO SEE ALL THE COMMENTARIES OF AN SPECIFIC
 //DASHBOARD
-router.get('/dashboard/:id', async (req, res) => {
+router.get('/dashboard/:id', withAuth, async (req, res) => {
   try {
     const dashboardData = await Dashboard.findByPk(req.params.id, {
      
