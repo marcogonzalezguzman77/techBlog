@@ -2,16 +2,14 @@
 {{#each dashboards as |dashboard| }}
 <div class="row mb-4 project">
   <div class="col-md-5">
-    <h2>           
-      <a href="/dashboard/{{dashboard.id}}">{{dashboard.name}}</a>
-    </h2>
+    <h2>{{dashboard.name}}</h2>
     
     <p>Created by {{dashboard.user.name}} on {{format_date dashboard.date_created}}</p>
   </div>
   <div class="col-md-7">
-    <p>
-      {{dashboard.description}}
-    </p>
+    <p>{{dashboard.description}}</p>    
+    <h5><a href="/dashboard/{{dashboard.id}}">{{dashboard.commentaries_dashboard_detail.length}} 
+      Commentaries</a></h5>
   </div>
 </div>
 {{/each}}

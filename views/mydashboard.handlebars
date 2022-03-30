@@ -4,30 +4,61 @@
 </div>
 
 <div id="all_myposts">
-<h1>All my posts</h1>
+<div style="color:darkslategray; text-decoration:underline; text-underline-position: under; margin-bottom:20px;"><h1>All my posts</h1></div>
+
 <!-- Loop over each object in the projects array -->
-{{#each dashboards as |dashboard| }}
-<div class="row mb-4 project">
-  <div class="col-md-5">
-    <h2>           
-      <a href="/dashboard/{{dashboard.id}}">{{dashboard.name}}</a>
-    </h2>
-    
-    <p>Created by {{dashboard.user.name}} on {{format_date dashboard.date_created}}</p>
+
+{{#if dashboards}}
+<div class="row mb-4 dashboard-list">
+  {{#each dashboards as |dashboard| }}
+
+  <div class="col-md-12" style="display:none; border-bottom: solid gray 0.5px;" id="div-update-dashboard-{{dashboard.id}}">
+    <h3>Update the Post:</h3>
+
+    <form class="form new-project-form">
+      <div class="form-group">
+        <label for="post-name">Post name:</label>
+        <input class="form-input" type="text" id="post-name" name="post-name" value="{{dashboard.name}}" />
+      </div>      
+      <div class="form-group">
+        <label for="post-desc">Description:</label>
+        <textarea class="form-input" id="post-desc" name="post-desc">{{dashboard.description}}</textarea>
+      </div>      
+    </form>
+    <div class="form-group" style="margin-bottom:5px;">
+        <button id="btn_updatePostinForm" type="submit" class="btn btn-primary" style="background-color:chocolate" data-idupdateform="{{dashboard.id}}">Update</button>
+      </div>
   </div>
-  <div class="col-md-7">
-    <p>
-      {{dashboard.description}}
-    </p>
-  </div>
+
+
+ 
+      <div class="col-md-5" style="border-bottom: solid gray 0.5px;" id="div-dashboard-{{dashboard.id}}">
+        <h2>{{dashboard.name}}</h2>    
+        <p>Created by {{dashboard.user.name}} on {{format_date dashboard.date_created}}</p>
+        <div style="margin-bottom:5px;">
+          <button id="btn_updatePost" class="btn btn-primary" type="submit" style="background-color:chocolate" data-idupdate="{{dashboard.id}}">Update</button><button id="btn_deletePost" class="btn btn-primary" style="margin-left:5px; background-color:brown" type="submit" data-iddelete="{{dashboard.id}}">Delete</button>
+        </div>
+      </div>
+      <div class="col-md-7" style="border-bottom: solid gray 0.5px;" id="div-commentary-{{dashboard.id}}">
+        <p>{{dashboard.description}}</p>
+        <h5><a href="/dashboard/{{dashboard.id}}">{{dashboard.commentaries_dashboard_detail.length}} 
+          Commentaries</a></h5>
+      </div>
+
+
+  {{/each}}
 </div>
-{{/each}}
+{{else}}
+ <p>There is no Posts</p>
+{{/if}}
+
 </div>
 
 
 
 
-<div class="col-md-6" id="newPost_form" style="display:none">
+
+<div class="col-md-16" id="newPost_form" style="display:none">
     <h3>Create a New Post:</h3>
 
     <form class="form new-project-form">

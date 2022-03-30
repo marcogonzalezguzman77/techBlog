@@ -3,6 +3,8 @@ const { Commentaries } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 router.post('/', withAuth, async (req, res) => {
+  console.log('inside commentary post')
+  /*
   try {
     const newCommentary = await Commentaries.create({
       ...req.body,
@@ -13,6 +15,7 @@ router.post('/', withAuth, async (req, res) => {
   } catch (err) {
     res.status(400).json(err);
   }
+  */
 });
 
 router.delete('/:id', withAuth, async (req, res) => {

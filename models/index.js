@@ -24,6 +24,7 @@ Commentaries.belongsTo(User, {
 
 
 
+
 Dashboard.belongsToMany(Commentaries, {
   // Define the third table needed to store the foreign keys
   through: {
@@ -31,12 +32,15 @@ Dashboard.belongsToMany(Commentaries, {
     unique: false
   },
   // Define an alias for when data is retrieved
-  as: 'commentaries_dashboard_detail'
+  as: 'commentaries_dashboard_detail',
+  constraints: false,
+  onDelete: 'CASCADE'
 });
 
 
 
 // Commentaries belongTo Dashboard (through DashboardCommentaries)
+
 Commentaries.belongsToMany(Dashboard, {
   // Define the third table needed to store the foreign keys
   through: {
@@ -44,15 +48,36 @@ Commentaries.belongsToMany(Dashboard, {
     unique: false
   },
   // Define an alias for when data is retrieved
-  as: 'dashboard_commentaries_detail'
+  as: 'dashboard_commentaries_detail',
+  onDelete: 'CASCADE'
 });
 
 
-Dashboard.hasMany(DashboardCommentaries);
+
+/*
+
+DashboardCommentaries.hasOne(Commentaries,{
+  onDelete: 'CASCADE'
+});
+Commentaries.belongsTo(DashboardCommentaries);
+*/
+
+/*
+Dashboard.hasMany(DashboardCommentaries,{
+  onDelete: 'CASCADE'
+});
 DashboardCommentaries.belongsTo(Dashboard);
 
-Commentaries.hasMany(DashboardCommentaries);
+
+Commentaries.hasMany(DashboardCommentaries,{
+  onDelete: 'CASCADE'
+});
 DashboardCommentaries.belongsTo(Commentaries);
+*/
+
+
+
+
 
 
 module.exports = { User, Dashboard, Commentaries, DashboardCommentaries };

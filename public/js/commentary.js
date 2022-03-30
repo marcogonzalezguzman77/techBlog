@@ -12,10 +12,10 @@ const openCommentaryForm = (event) => {
 const newCommentaryHandler = async (event) => {
 event.preventDefault();
 console.log('inside commentary handler');
-const commentary = document.querySelector('#commentary').value.trim();  
-
+const commentary = document.getElementById('commentary').value.trim();  
+//console.log('commentary',commentary);
 if (commentary) {
-  const response = await fetch(`/api/commentaries`, {
+    const response = await fetch(`/api/commentaries`, {
     method: 'POST',
     body: JSON.stringify({ commentary }),
     headers: {
@@ -48,8 +48,12 @@ if (commentary) {
     
 
   } else {
+    
     alert('Failed to create commentary');
   }
+}
+else {
+  console.log('There is no commentary');
 }
 };
 
