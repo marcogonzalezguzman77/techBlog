@@ -2,7 +2,7 @@
 
 ## 📄 Description
 
-This is a blog app where developers can publish their blog and comment others developer´s posts about technical concepts, recent advancements, and new technologies (Content Management System-CMS). The app use the Model-View-Controller architecture. Handlelbars for views, mysql-sequelize packages for models and express appi for controllers.
+This is a blog app where developers can publish posts and comment others developer´s posts about technical concepts, recent advancements, and new technologies (Content Management System-CMS). The app use the Model-View-Controller architecture. Handlelbars for views, mysql-sequelize packages for models and express appi for controllers.
 
 ## ⚙⚙ Web Page Functionality
 
