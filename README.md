@@ -9,7 +9,7 @@ This is a blog app where developers can publish posts and comment others develop
 
 The following image shows the Tech Blog application's appearance and functionality:
 
-![Tech Blog Image](./public/img/techBlog.webp)
+![Tech Blog Image](./public/img/techBlog.gif)
 
 You can get in into the App in the next link in Heroku [Tech Blog](https://tech-blog-magg.herokuapp.com//) for testing.
 
