@@ -7,11 +7,11 @@ This is a blog app where developers can publish posts and comment others develop
 ## ⚙⚙ Web Page Functionality
 
 
-The following animation shows the Tech Blog application's appearance and functionality:
+The following image shows the Tech Blog application's appearance and functionality:
 
-![Tech Blog Demo](./assets/images/weatherDashboard.gif)
+![Tech Blog Image](./public/img/techBlog.webp)
 
-You can watch the web page on the next link in Heroku [Tech Blog](https://marcogonzalezguzman77.github.io/weatherDashboard/) for test.
+You can get in into the App in the next link in Heroku [Tech Blog](https://tech-blog-magg.herokuapp.com//) for testing.
 
 
 
